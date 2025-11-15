@@ -5,25 +5,25 @@ const features = [
     icon: Code2,
     title: "Open Source",
     description:
-      "All our code is publicly available, auditable, and free to use",
+      "Yep, all our code is out there for everyone to see. It's free to use, fork, and improve. Just ignore the \"final_final_FIX_really.\" commit.",
   },
   {
     icon: Users,
     title: "Community Driven",
     description:
-      "Built by developers, for developers, with community feedback at the core",
+      "Built by developers for developers who know what chaos looks like. Your ideas keep us inspired, occasionally confused, but always coding.",
   },
   {
     icon: Heart,
     title: "Contribution Welcome",
     description:
-      "Everyone can contribute, improve, and help shape the future of our projects",
+      "See something that needs work? Go for it. Fork it, fix it, and pretend it was easy. We'll totally act impressed.",
   },
   {
     icon: Globe,
     title: "Global Impact",
     description:
-      "Creating solutions that benefit developers and users worldwide",
+      "From midnight commits to global projects, we're all in this together. Changing the world one slightly questionable pull request at a time.",
   },
 ];
 

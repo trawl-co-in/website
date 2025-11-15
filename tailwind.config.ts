@@ -17,6 +17,8 @@ export default {
         sans: ['Georgia', 'serif'],
       },
       colors: {
+        pink: 'hsl(321.13 71% 39.22%)',
+        black: '#1b1825', // FIXME: Adjusted black for better contrast
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -29,7 +29,7 @@ const Contact = () => {
           {/* 💌 Contact Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-6 pt-6">
         <a
-        href="mailto:contact@trawl.dev"
+        href="mailto:contact@trawl.co.in"
         className="inline-flex items-center justify-center gap-2 bg-pink-500 hover:bg-pink-600 text-white text-lg font-medium px-8 py-3 rounded-full shadow-md hover:shadow-pink-500/40 transition-all duration-300"
     >
         <Mail className="w-5 h-5" />

@@ -116,7 +116,7 @@ const Donate = () => {
           </p>
           <Button
             className="bg-pink-500 hover:bg-pink-600 text-white text-lg font-medium px-6 py-3 rounded-full"
-            onClick={() => window.open("https://www.buymeacoffee.com/", "_blank")}
+            onClick={() => window.open("https://buymeacoffee.com/trawl.co.in", "_blank")}
           >
             Donate $5
           </Button>
@@ -146,7 +146,7 @@ const Donate = () => {
           </p>
           <Button
             className="bg-pink-500 hover:bg-pink-600 text-white text-lg font-medium px-6 py-3 rounded-full"
-            onClick={() => window.open("mailto:contact@trawl.dev", "_blank")}
+            onClick={() => window.open("mailto:contact@trawl.co.in", "_blank")}
           >
             Contact Us
           </Button>

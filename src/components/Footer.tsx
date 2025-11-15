@@ -19,12 +19,12 @@ const Footer = () => {
               <span className="text-purple-400">tr</span>
               <span className="text-pink-500 mx-[1px]">a</span>
               <span className="text-purple-400">wl</span>
-              
+
             </h3>
-            <p className="text-lg text-gray-400 leading-relaxed max-w-sm">
+            <span className="text-lg text-gray-400 leading-relaxed max-w-sm">
               Building open-source solutions for a brighter tomorrow — together
               with the global developer community.
-            </p>
+            </span>
           </div>
 
           {/* ⚡ Quick Links */}
@@ -77,7 +77,7 @@ const Footer = () => {
                 },
                 {
                   icon: Mail,
-                  href: "mailto:contact@opensource.dev",
+                  href: "mailto:contact@trawl.co.in",
                   label: "Email",
                 },
               ].map(({ icon: Icon, href, label }) => (

@@ -10,38 +10,50 @@ All colors defined in HSL for easy manipulation.
 @layer base {
   :root {
     /* Base colors */
-    --background: 0 0% 0%; /* Pure black */
-    --foreground: 0 0% 100%; /* White text */
+    --background: 253.85 21.31% 11.96%;
+    /* Deep violet-gray background */
+    --foreground: 0 0% 100%;
+    /* White text for strong contrast */
 
-    /* Surfaces */
-    --card: 0 0% 5%;
+    /* Surfaces (darker for subtle depth) */
+    --card: 253.85 21.31% 9%;
+    /* Darker than background */
     --card-foreground: 0 0% 100%;
-    --popover: 0 0% 5%;
+    --popover: 253.85 21.31% 8%;
+    /* Slightly darker for overlay depth */
     --popover-foreground: 0 0% 100%;
 
-    /* Brand color: Bright Pink */
-    --primary: 330 100% 71%;
-    --primary-foreground: 0 0% 0%;
+    /* Brand color: Bright Magenta Pink */
+    --primary: 321.13 71% 39.22%;
+    --primary-foreground: 0 0% 100%;
 
-    /* 🌟 Global Hover Color */
-    --hover-color: 50 100% 50%; /* Bright yellow (HSL) */
+    /* Hover / Focus */
+    --hover-color: 321 71% 47%;
+    --ring: 321 71% 47%;
 
     /* Secondary and neutrals */
-    --secondary: 0 0% 10%;
+    --secondary: 266.29 53.29% 28%;
+    /* Darker purple tone for harmony */
     --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 10%;
+    --muted: 253.85 21.31% 12%;
+    /* Muted but darker section backgrounds */
     --muted-foreground: 0 0% 70%;
+    /* Dimmed gray text for subtle contrast */
 
-    /* Accent matches primary */
-    --accent: 330 100% 71%;
-    --accent-foreground: 0 0% 0%;
+    /* Accent (slightly dimmed to match the mood) */
+    --accent: 323 60% 48%;
+    /* More subdued pink accent */
+    --accent-foreground: 0 0% 100%;
 
     /* Utility & feedback colors */
-    --destructive: 0 84% 60%;
+    --destructive: 0 70% 42%;
+    /* Slightly darker red for smoother contrast */
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 330 100% 71%;
+    --border: 253.85 21.31% 16%;
+    /* Subtle border tone for dark surfaces */
+    --input: 253.85 21.31% 16%;
+    --shadow: 0 0% 0% / 0.5;
+    /* Deeper shadow for better layering */
 
     /* Optional extras */
     --overlay: 0 0% 0% / 0.7;

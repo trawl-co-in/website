@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock } from "lucide-react";
-import Article1 from "@/components/animation/images/Article1.png";
+import Article1 from "/images/Article1.png";
 
 interface BlogPost {
   id: number;

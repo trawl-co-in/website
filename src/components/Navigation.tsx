@@ -15,17 +15,12 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/5 shadow-[0_2px_10px_rgba(255,105,180,0.1)]">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black backdrop-blur-md border-b border-white/5 shadow-[0_2px_10px_rgba(255,105,180,0.1)]">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* 🧠 Stylized Brand */}
           <Link to="/" className="flex items-center select-none">
-            <h1 className="text-3xl font-bold tracking-wide flex items-center font-[Georgia,serif]">
-              <span className="text-purple-400">tr</span>
-              <span className="text-pink-500 mx-[1px]">a</span>
-              <span className="text-purple-400">wl</span>
-              
-            </h1>
+            <img src="/images/logo-dark.png" alt="Trawl Logo" className="h-10 mr-2" />
           </Link>
 
           {/* 💻 Desktop Navigation */}
