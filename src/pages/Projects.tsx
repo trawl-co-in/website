@@ -108,7 +108,7 @@ const Projects = () => {
     <div className="flex h-screen w-full bg-background overflow-hidden">
       <Sidebar />
       
-      <div className="flex-1 flex flex-col min-w-0">
+      <div className="flex-1 flex flex-col min-w-0 pl-16">
         <header className="glass-panel border-b border-border px-6 py-3 flex items-center justify-between">
           <div>
             <h1 className="text-lg font-bold text-foreground glow-purple">OpenSource Hub</h1>

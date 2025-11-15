@@ -4,16 +4,16 @@ import logo from "@/assets/logo.png";
 
 export const Sidebar = () => {
   return (
-    <aside className="w-16 glass-panel flex flex-col items-center py-6 gap-6 border-r border-border">
+    <aside className="fixed top-0 left-0 h-screen w-16 glass-panel flex flex-col items-center py-6 gap-6 border-r border-border z-[999]">
       {/* Logo */}
       <NavLink to="/" className="flex items-center justify-center" title="Home">
-        <img 
-          src={logo} 
-          alt="OpenSource Hub Logo" 
+        <img
+          src={logo}
+          alt="OpenSource Hub Logo"
           className="w-10 h-10 rounded-lg hover:scale-110 transition-transform"
         />
       </NavLink>
-      
+
       {/* Navigation */}
       <nav className="flex flex-col gap-3 flex-1">
         <NavLink

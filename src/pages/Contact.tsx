@@ -29,7 +29,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen flex w-full">
       <Sidebar />
-      <main className="flex-1 overflow-auto">
+      <main className="flex-1 overflow-auto pl-16">
         <div className="max-w-6xl mx-auto px-4 py-12">
           {/* Header */}
           <div className="mb-12 space-y-4">
