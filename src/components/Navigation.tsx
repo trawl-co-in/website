@@ -11,7 +11,7 @@ const Navigation = () => {
     { name: "Blog", href: "/blog" },
     { name: "Projects", href: "/projects" },
     { name: "Contact", href: "/contact" },
-    { name: "Contribute", href: "/donate" },
+    { name: "Contribute", href: "/donate" }];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black backdrop-blur-md border-b border-white/5 shadow-[0_2px_10px_rgba(255,105,180,0.1)]">

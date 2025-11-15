@@ -51,7 +51,7 @@ export const Footer = () => {
                         {" "} and excessive amounts of caffeine
                     </p>
                     <p className="text-xs mt-2">
-                        © 2025 trawl. Licensed under the Zero Liability License: do what you want, just don't blame us.
+                        © 2025 trawl. Licensed under the Zero Liability License: contribute responsibly.
                     </p>
                 </div>
             </div>

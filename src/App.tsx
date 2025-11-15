@@ -11,6 +11,7 @@ import Contribute from "./pages/Contribute";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { ArticlePage01 } from "./pages/articles/ArticlePage01";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,9 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/contribute" element={<Contribute />} />
           <Route path="/about" element={<About />} />
+
+          <Route path="/blog/documentation-we-never-wrote" element={<ArticlePage01 />} />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
