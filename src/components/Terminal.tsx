@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronRight } from "lucide-react";
 import { Project } from "@/data/sampleProjects";
+import TerminalHistory from "./TerminalHistory";
 
 interface TerminalProps {
   onCommand: (command: string) => void;
@@ -25,7 +26,7 @@ export const Terminal = ({ onCommand, results }: TerminalProps) => {
 
   useEffect(() => {
     if (input.length > 0) {
-      const filtered = COMMANDS.filter(cmd => 
+      const filtered = COMMANDS.filter(cmd =>
         cmd.toLowerCase().includes(input.toLowerCase())
       );
       setSuggestions(filtered);
@@ -74,23 +75,7 @@ export const Terminal = ({ onCommand, results }: TerminalProps) => {
   return (
     <div className="flex-1 flex flex-col relative terminal-scanlines terminal-vignette overflow-hidden">
       <div className="flex-1 overflow-y-auto p-6 space-y-4">
-        {history.length === 0 && results.length === 0 && (
-          <div className="space-y-2 text-muted-foreground">
-            <p className="flex items-center gap-2">
-              <ChevronRight className="w-4 h-4 text-primary" />
-              <span>Welcome to OpenTerminal</span>
-            </p>
-            <p className="pl-6 text-sm">Type your first command — try "search: react form"</p>
-            <p className="pl-6 text-sm">Or type "help" for available commands</p>
-          </div>
-        )}
-
-        {history.map((cmd, i) => (
-          <div key={i} className="flex items-center gap-2 text-terminal-command">
-            <ChevronRight className="w-4 h-4 text-primary" />
-            <span>{cmd}</span>
-          </div>
-        ))}
+        <TerminalHistory history={history} results={results} />
       </div>
 
       <div className="border-t border-border bg-card/50 backdrop-blur-sm p-4">
@@ -113,7 +98,7 @@ export const Terminal = ({ onCommand, results }: TerminalProps) => {
               ))}
             </div>
           )}
-          
+
           <div className="flex items-center gap-2">
             <ChevronRight className="w-5 h-5 text-primary glow-green" />
             <input

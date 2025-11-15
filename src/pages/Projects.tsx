@@ -37,7 +37,7 @@ const Projects = () => {
             project.description.toLowerCase().includes(query)
         );
         setResults(filtered);
-        
+
         if (filtered.length === 0) {
           toast.error("No results", {
             description: "Try a broader term or type 'help'",
@@ -55,7 +55,7 @@ const Projects = () => {
         (project) => project.language.toLowerCase() === language
       );
       setResults(filtered);
-      
+
       if (filtered.length === 0) {
         toast.error("No projects found", {
           description: `No projects using ${language}`,
@@ -107,12 +107,12 @@ const Projects = () => {
   return (
     <div className="flex h-screen w-full bg-background overflow-hidden">
       <Sidebar />
-      
+
       <div className="flex-1 flex flex-col min-w-0 pl-16">
         <header className="glass-panel border-b border-border px-6 py-3 flex items-center justify-between">
           <div>
-            <h1 className="text-lg font-bold text-foreground glow-purple">OpenSource Hub</h1>
-            <p className="text-xs text-muted-foreground">Command your open source journey</p>
+            <h1 className="text-lg font-bold text-foreground glow-purple">Our Projects</h1>
+            <p className="text-xs text-muted-foreground">What we've built, and what we’re still building</p>
           </div>
           <button
             onClick={() => setShowHelp(true)}
@@ -125,13 +125,18 @@ const Projects = () => {
         <div className="flex-1 flex overflow-hidden">
           <div className="flex-1 flex flex-col min-w-0">
             <Terminal onCommand={handleCommand} results={results} />
-            
-            {results.length > 0 && (
-              <div className="border-t border-border bg-card/30 p-6 overflow-y-auto max-h-96">
-                <h2 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
-                  <span className="text-primary">→</span>
-                  Results ({results.length})
-                </h2>
+
+            <div className="border-t border-border bg-card/30 p-6 overflow-y-auto max-h-96 min-h-96">
+              <h2 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
+                <span className="text-primary">→</span>
+                Results ({results.length})
+              </h2>
+
+              {results.length === 0 ? (
+                <p className="text-sm text-muted-foreground italic">
+                  No results found.
+                </p>
+              ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {results.map((project) => (
                     <ProjectCard
@@ -141,8 +146,9 @@ const Projects = () => {
                     />
                   ))}
                 </div>
-              </div>
-            )}
+              )}
+            </div>
+
           </div>
 
           <Inspector project={selectedProject} />
