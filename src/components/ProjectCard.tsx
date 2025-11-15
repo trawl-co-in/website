@@ -42,10 +42,10 @@ export const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
           {project.language}
         </span>
         
-        <span className="flex items-center gap-1 text-muted-foreground">
+        {/* <span className="flex items-center gap-1 text-muted-foreground">
           <Star className="w-3 h-3" />
           {project.stars.toLocaleString()}
-        </span>
+        </span> */}
         
         <span className="flex items-center gap-1 text-muted-foreground">
           <FileText className="w-3 h-3" />

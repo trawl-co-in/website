@@ -9,7 +9,7 @@ interface InspectorProps {
 export const Inspector = ({ project }: InspectorProps) => {
   if (!project) {
     return (
-      <aside className="w-80 glass-panel border-l border-border p-6 overflow-y-auto">
+      <aside className="w-[40vw] glass-panel border-l border-border p-6 overflow-y-auto">
         <div className="text-center text-muted-foreground space-y-2">
           <div className="w-16 h-16 mx-auto rounded-full bg-muted/20 flex items-center justify-center mb-4">
             <ExternalLink className="w-8 h-8" />
@@ -35,7 +35,7 @@ export const Inspector = ({ project }: InspectorProps) => {
   };
 
   return (
-    <aside className="w-80 glass-panel border-l border-border overflow-y-auto">
+    <aside className="w-[40vw] glass-panel border-l border-border overflow-y-auto">
       <div className="p-6 space-y-6">
         <div>
           <h2 className="text-xl font-bold text-foreground mb-2 glow-green">
@@ -44,7 +44,7 @@ export const Inspector = ({ project }: InspectorProps) => {
           <p className="text-sm text-muted-foreground">{project.description}</p>
         </div>
 
-        <div className="flex gap-2">
+        {/* <div className="flex gap-2">
           <button 
             onClick={handleStar}
             className="flex-1 px-3 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary text-sm font-medium transition-colors border border-primary/30 flex items-center justify-center gap-2"
@@ -56,9 +56,9 @@ export const Inspector = ({ project }: InspectorProps) => {
             <GitFork className="w-4 h-4" />
             Fork
           </button>
-        </div>
+        </div> */}
 
-        <div className="glass-panel p-4 rounded-lg space-y-3 border border-border/30">
+        {/* <div className="glass-panel p-4 rounded-lg space-y-3 border border-border/30">
           <div className="flex items-center justify-between text-sm">
             <span className="text-muted-foreground flex items-center gap-2">
               <Users className="w-4 h-4" />
@@ -73,14 +73,15 @@ export const Inspector = ({ project }: InspectorProps) => {
             </span>
             <span className="font-medium">{project.lastCommit}</span>
           </div>
-        </div>
+        </div> */}
 
         <button
-          onClick={handleClone}
+          // onClick={handleClone}
           className="w-full px-4 py-2 rounded-lg bg-accent/10 hover:bg-accent/20 text-accent text-sm font-medium transition-colors border border-accent/30 flex items-center justify-center gap-2"
         >
-          <Copy className="w-4 h-4" />
-          Copy Clone Command
+          the repo is going public soon!
+          {/* <Copy className="w-4 h-4" />
+          Copy Clone Command */}
         </button>
 
         <div className="space-y-3">

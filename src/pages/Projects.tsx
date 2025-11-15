@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { Sidebar } from "@/components/Sidebar";
-import { Terminal } from "@/components/Terminal";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Inspector } from "@/components/Inspector";
 import { HelpModal } from "@/components/HelpModal";
 import { sampleProjects, Project } from "@/data/sampleProjects";
 import { toast } from "sonner";
-import { HelpCircle } from "lucide-react";
 
 const Projects = () => {
   const [results, setResults] = useState<Project[]>(sampleProjects);
@@ -114,30 +112,30 @@ const Projects = () => {
             <h1 className="text-lg font-bold text-foreground glow-purple">Our Projects</h1>
             <p className="text-xs text-muted-foreground">What we've built, and what we’re still building</p>
           </div>
-          <button
+          {/* <button
             onClick={() => setShowHelp(true)}
             className="p-2 hover:bg-primary/10 rounded-lg transition-colors group"
           >
             <HelpCircle className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-          </button>
+          </button> */}
         </header>
 
         <div className="flex-1 flex overflow-hidden">
           <div className="flex-1 flex flex-col min-w-0">
-            <Terminal onCommand={handleCommand} results={results} />
+            {/* <Terminal onCommand={handleCommand} results={results} /> */}
 
-            <div className="border-t border-border bg-card/30 p-6 overflow-y-auto max-h-96 min-h-96">
-              <h2 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
+            <div className="border-t border-border bg-card/30 p-6 overflow-y-auto">{/*max-h-96 min-h-96*/}
+              {/* <h2 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
                 <span className="text-primary">→</span>
                 Results ({results.length})
-              </h2>
+              </h2> */}
 
               {results.length === 0 ? (
                 <p className="text-sm text-muted-foreground italic">
                   No results found.
                 </p>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
                   {results.map((project) => (
                     <ProjectCard
                       key={project.id}

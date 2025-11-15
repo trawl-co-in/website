@@ -1,6 +1,7 @@
-import { Home, Search, FileText, Mail, Heart, HelpCircle } from "lucide-react";
+import { Home, Search, FileText, Mail, Heart } from "lucide-react";
 import { NavLink } from "./NavLink";
 import logo from "@/assets/logo.png";
+import { GithubIcon } from "./icons/GithubIcon";
 
 export const Sidebar = () => {
   return (
@@ -72,7 +73,7 @@ export const Sidebar = () => {
           className="w-10 h-10 rounded-lg hover:bg-primary/10 flex items-center justify-center transition-colors group"
           title="GitHub"
         >
-          <HelpCircle className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+          <GithubIcon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
         </a>
       </div>
     </aside>

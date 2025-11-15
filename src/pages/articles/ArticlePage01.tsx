@@ -46,7 +46,7 @@ export const ArticlePage01 = () => {
                             making.
                         </p>
 
-                        <h3 className="text-3xl font-bold mt-8 mb-4 font-mono">
+                        <h3 className="text-2xl font-bold mt-8 mb-4 font-mono">
                             Auto-generated docs: The participation trophy of documentation
                         </h3>
 
@@ -70,7 +70,7 @@ export const ArticlePage01 = () => {
                             with enthusiasm and then immediately ignored.
                         </p>
 
-                        <h3 className="text-3xl font-bold mt-8 mb-4 font-mono">The dream of “good documentation”</h3>
+                        <h3 className="text-2xl font-bold mt-8 mb-4 font-mono">The dream of “good documentation”</h3>
 
                         <p className="mb-6 text-xl text-muted-foreground">
                             Every team has a meeting where someone says, “We should really invest in documentation.”
@@ -82,7 +82,7 @@ export const ArticlePage01 = () => {
                             someone let go of in a parking lot.
                         </p>
 
-                        <h3 className="text-3xl font-bold mt-8 mb-4 font-mono">Will AI save us?</h3>
+                        <h3 className="text-2xl font-bold mt-8 mb-4 font-mono">Will AI save us?</h3>
 
                         <p className="mb-6 text-xl text-muted-foreground">
                             Maybe. AI can help write drafts when we are tired or confused or simply pretending to be
@@ -100,7 +100,7 @@ export const ArticlePage01 = () => {
                             code the way we did, and only we can prevent the documentation from becoming fiction.
                         </p>
 
-                        <h3 className="text-3xl font-bold mt-8 mb-4 font-mono">Why even small documentation matters</h3>
+                        <h3 className="text-2xl font-bold mt-8 mb-4 font-mono">Why even small documentation matters</h3>
 
                         <p className="mb-6 text-xl text-muted-foreground">
                             The truth is that documentation does not have to be perfect. It just needs to be a little
