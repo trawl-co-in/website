@@ -7,6 +7,15 @@ import banner from "@/assets/banner.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
+// Shared animations
+import {
+  fadeInUp,
+  fadeIn,
+  scaleIn,
+  floatLoop,
+  staggerItem,
+} from "@/animations/commonAnimations";
+
 // Text constants
 const HERO_TAGLINE = "Because proprietary software is so last decade";
 const HERO_DESCRIPTION =
@@ -14,22 +23,14 @@ const HERO_DESCRIPTION =
 const HERO_DESCRIPTION_EMPH = "Simple, honest, human-made.";
 
 const FEATURE_TITLES = ["Transparency", "Community", "Innovation"];
-
 const FEATURE_TEXT = [
   "Every line of code is visible. No hidden trackers, no mysterious 'features', no venture capitalist surveillance fantasies.",
   "Built by developers who use it, not by product managers who... well, we're still figuring out what they do.",
   "We move fast and fix things. Unlike some companies that move fast and break democracies.",
 ];
 
-const CTA_TITLE = "Join the Revolution";
+const CTA_TITLE = "Open Source Shift";
 const CTA_SUBTEXT = "Or at least star our repos. We're not picky.";
-
-const FOOTER_NAV = {
-  Navigate: ["Home", "Projects", "Blog", "About"],
-  Connect: ["Contact", "GitHub", "Discord", "Twitter"],
-  Support: ["Contribute", "Documentation", "Community", "FAQ"],
-  Legal: ["MIT License", "Privacy", "Terms", "Code of Conduct"],
-};
 
 const Landing = () => {
   const heroRef = useRef(null);
@@ -46,7 +47,7 @@ const Landing = () => {
   return (
     <div className="min-h-screen flex w-full">
       <Sidebar />
-      <main className="flex-1 overflow-auto pl-16 isolate">
+      <main className="flex-1 overflow-auto pl-16">
         {/* Hero Section */}
         <section
           ref={heroRef}
@@ -57,15 +58,17 @@ const Landing = () => {
           <motion.div
             className="relative max-w-5xl mx-auto text-center space-y-8"
             style={{ opacity: fadeOut }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial="initial"
+            animate="animate"
+            variants={fadeInUp}
             transition={{ duration: 0.8 }}
           >
             {/* Tagline */}
             <motion.div
               className="inline-block"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              variants={fadeInUp}
+              initial="initial"
+              animate="animate"
               transition={{ delay: 0.2 }}
               style={{ scale: heroScale }}
             >
@@ -80,29 +83,25 @@ const Landing = () => {
             {/* Banner Image */}
             <motion.div
               className="max-w-4xl mx-auto mb-8"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
+              variants={scaleIn}
+              initial="initial"
+              animate="animate"
               transition={{ delay: 0.3, duration: 0.8 }}
             >
               <motion.img
                 src={banner}
                 alt="OpenSource Hub"
                 className="w-full h-auto rounded-lg shadow-2xl glow-purple"
-                animate={{ y: [0, -12, 0] }} 
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
+                animate={floatLoop}
               />
             </motion.div>
-
 
             {/* Description */}
             <motion.p
               className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              variants={fadeIn}
+              initial="initial"
+              animate="animate"
               transition={{ delay: 0.4 }}
               style={{ scale: heroScale }}
             >
@@ -116,8 +115,9 @@ const Landing = () => {
             {/* Buttons */}
             <motion.div
               className="flex flex-wrap gap-4 justify-center pt-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              variants={fadeIn}
+              initial="initial"
+              animate="animate"
               transition={{ delay: 0.5 }}
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -146,8 +146,9 @@ const Landing = () => {
           <div className="max-w-6xl mx-auto">
             <motion.h2
               className="text-4xl font-bold font-mono text-center mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={fadeInUp}
+              initial="initial"
+              whileInView="animate"
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
@@ -157,8 +158,9 @@ const Landing = () => {
 
             <motion.p
               className="text-center text-muted-foreground mb-16 text-lg"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              variants={fadeIn}
+              initial="initial"
+              whileInView="animate"
               transition={{ delay: 0.2 }}
               viewport={{ once: true }}
             >
@@ -167,13 +169,7 @@ const Landing = () => {
 
             <div className="grid md:grid-cols-3 gap-6">
               {[0, 1, 2].map((idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 50, scale: 0.95 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ delay: idx * 0.15, duration: 0.6 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                >
+                <motion.div key={idx} {...staggerItem(idx * 0.15)}>
                   <Card className="glass-panel p-6 space-y-4 hover:scale-105 transition-transform">
                     <div className="h-12 w-12 rounded-lg bg-primary/20 flex items-center justify-center">
                       {idx === 0 && <Code2 className="h-6 w-6 text-primary" />}
@@ -196,17 +192,18 @@ const Landing = () => {
         <section className="py-20 px-4 overflow-x-hidden">
           <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={fadeInUp}
+              initial="initial"
+              whileInView="animate"
               transition={{ duration: 0.6 }}
               viewport={{ once: true, amount: 0.2 }}
             >
               <Card className="glass-panel p-12 text-center space-y-6">
                 <h2 className="text-4xl font-bold font-mono">
-                  {CTA_TITLE.replace("Revolution", "")}
-                  <span className="text-secondary">Revolution</span>
+                  Join the <span className="text-secondary">{CTA_TITLE}</span>
                 </h2>
                 <p className="text-xl text-muted-foreground">{CTA_SUBTEXT}</p>
+
                 <div className="flex flex-wrap gap-4 justify-center pt-4">
                   <Button asChild size="lg">
                     <Link to="/blog">Read Our Blog</Link>

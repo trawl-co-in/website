@@ -8,6 +8,14 @@ import { sampleProjects, Project } from "@/data/sampleProjects";
 import { toast } from "sonner";
 import { HelpCircle } from "lucide-react";
 
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  fadeIn,
+  fadeInUp,
+  scaleIn,
+  staggerItem,
+} from "@/animations/commonAnimations";
+
 const Index = () => {
   const [results, setResults] = useState<Project[]>(sampleProjects);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -37,13 +45,13 @@ const Index = () => {
             project.description.toLowerCase().includes(query)
         );
         setResults(filtered);
-        
+
         if (filtered.length === 0) {
           toast.error("No results", {
             description: "Try a broader term or type 'help'",
           });
         } else {
-          toast.success(`Found ${filtered.length} project${filtered.length === 1 ? '' : 's'}`);
+          toast.success(`Found ${filtered.length} project${filtered.length === 1 ? "" : "s"}`);
         }
       }
       return;
@@ -55,13 +63,13 @@ const Index = () => {
         (project) => project.language.toLowerCase() === language
       );
       setResults(filtered);
-      
+
       if (filtered.length === 0) {
         toast.error("No projects found", {
           description: `No projects using ${language}`,
         });
       } else {
-        toast.success(`Found ${filtered.length} ${language} project${filtered.length === 1 ? '' : 's'}`);
+        toast.success(`Found ${filtered.length} ${language} project${filtered.length === 1 ? "" : "s"}`);
       }
       return;
     }
@@ -107,12 +115,23 @@ const Index = () => {
   return (
     <div className="flex h-screen w-full bg-background overflow-hidden">
       <Sidebar />
-      
+
       <div className="flex-1 flex flex-col min-w-0">
-        <header className="glass-panel border-b border-border px-6 py-3 flex items-center justify-between">
+
+        {/* Header */}
+        <motion.header
+          className="glass-panel border-b border-border px-6 py-3 flex items-center justify-between"
+          variants={fadeInUp}
+          initial="initial"
+          animate="animate"
+        >
           <div>
-            <h1 className="text-lg font-bold text-foreground glow-green">OpenTerminal</h1>
-            <p className="text-xs text-muted-foreground">Command your open source journey</p>
+            <h1 className="text-lg font-bold text-foreground glow-green">
+              OpenTerminal
+            </h1>
+            <p className="text-xs text-muted-foreground">
+              Command your open source journey
+            </p>
           </div>
           <button
             onClick={() => setShowHelp(true)}
@@ -120,32 +139,64 @@ const Index = () => {
           >
             <HelpCircle className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
           </button>
-        </header>
+        </motion.header>
 
         <div className="flex-1 flex overflow-hidden">
+
           <div className="flex-1 flex flex-col min-w-0">
-            <Terminal onCommand={handleCommand} results={results} />
-            
-            {results.length > 0 && (
-              <div className="border-t border-border bg-card/30 p-6 overflow-y-auto max-h-96">
-                <h2 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
-                  <span className="text-primary">→</span>
-                  Results ({results.length})
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {results.map((project) => (
-                    <ProjectCard
-                      key={project.id}
-                      project={project}
-                      onClick={() => setSelectedProject(project)}
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
+
+            {/* Terminal */}
+            <motion.div
+              variants={scaleIn}
+              initial="initial"
+              animate="animate"
+            >
+              <Terminal onCommand={handleCommand} results={results} />
+            </motion.div>
+
+            {/* Results */}
+            <AnimatePresence>
+              {results.length > 0 && (
+                <motion.div
+                  className="border-t border-border bg-card/30 p-6 overflow-y-auto max-h-96"
+                  variants={fadeIn}
+                  initial="initial"
+                  animate="animate"
+                  exit={{ opacity: 0 }}
+                >
+                  <h2 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <span className="text-primary">→</span>
+                    Results ({results.length})
+                  </h2>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {results.map((project, idx) => (
+                      <motion.div key={project.id} {...staggerItem(idx * 0.05)}>
+                        <ProjectCard
+                          project={project}
+                          onClick={() => setSelectedProject(project)}
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
-          <Inspector project={selectedProject} />
+          {/* Inspector Panel */}
+          <AnimatePresence>
+            {selectedProject && (
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 40 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Inspector project={selectedProject} />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
 

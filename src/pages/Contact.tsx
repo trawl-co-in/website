@@ -8,6 +8,14 @@ import { Label } from "@/components/ui/label";
 import { Mail, MapPin, MessageSquare, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
+import { motion } from "framer-motion";
+import {
+  fadeIn,
+  fadeInUp,
+  scaleIn,
+  staggerItem,
+} from "@/animations/commonAnimations";
+
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -21,7 +29,8 @@ const Contact = () => {
     e.preventDefault();
     toast({
       title: "Message sent! (Not really)",
-      description: "We're still working on the backend. But we appreciate the thought! 💜",
+      description:
+        "We're still working on the backend. But we appreciate the thought! 💜",
     });
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
@@ -31,8 +40,15 @@ const Contact = () => {
       <Sidebar />
       <main className="flex-1 overflow-auto pl-16">
         <div className="max-w-6xl mx-auto px-4 py-12">
+
           {/* Header */}
-          <div className="mb-12 space-y-4">
+          <motion.div
+            className="mb-12 space-y-4"
+            variants={fadeInUp}
+            initial="initial"
+            animate="animate"
+            transition={{ duration: 0.6 }}
+          >
             <h1 className="text-5xl font-bold font-mono glow-magenta">
               Get in Touch
             </h1>
@@ -42,15 +58,23 @@ const Contact = () => {
             <p className="text-sm text-accent font-mono">
               We promise to read your message... eventually... probably...
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-8">
+
             {/* Contact Form */}
-            <div className="lg:col-span-2">
+            <motion.div
+              className="lg:col-span-2"
+              variants={scaleIn}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
               <Card className="glass-panel p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
+                    <motion.div className="space-y-2" variants={fadeInUp}>
                       <Label htmlFor="name">Name</Label>
                       <Input
                         id="name"
@@ -61,8 +85,9 @@ const Contact = () => {
                         }
                         required
                       />
-                    </div>
-                    <div className="space-y-2">
+                    </motion.div>
+
+                    <motion.div className="space-y-2" variants={fadeInUp}>
                       <Label htmlFor="email">Email</Label>
                       <Input
                         id="email"
@@ -74,10 +99,10 @@ const Contact = () => {
                         }
                         required
                       />
-                    </div>
+                    </motion.div>
                   </div>
 
-                  <div className="space-y-2">
+                  <motion.div className="space-y-2" variants={fadeInUp}>
                     <Label htmlFor="subject">Subject</Label>
                     <Input
                       id="subject"
@@ -88,9 +113,9 @@ const Contact = () => {
                       }
                       required
                     />
-                  </div>
+                  </motion.div>
 
-                  <div className="space-y-2">
+                  <motion.div className="space-y-2" variants={fadeInUp}>
                     <Label htmlFor="message">Message</Label>
                     <Textarea
                       id="message"
@@ -102,78 +127,95 @@ const Contact = () => {
                       }
                       required
                     />
-                  </div>
+                  </motion.div>
 
-                  <Button type="submit" size="lg" className="w-full md:w-auto">
-                    <Send className="mr-2 h-4 w-4" />
-                    Send Message
-                  </Button>
+                  <motion.div variants={fadeIn}>
+                    <Button type="submit" size="lg" className="w-full md:w-auto">
+                      <Send className="mr-2 h-4 w-4" />
+                      Send Message
+                    </Button>
+                  </motion.div>
+
                 </form>
               </Card>
-            </div>
+            </motion.div>
 
-            {/* Contact Info */}
+            {/* Contact Info Cards */}
             <div className="space-y-6">
-              <Card className="glass-panel p-6 space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="h-10 w-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold font-mono mb-1">Email</h3>
-                    <p className="text-sm text-muted-foreground">
-                      hello@opensource.dev
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      (Checked daily-ish)
-                    </p>
-                  </div>
-                </div>
-              </Card>
+              {[0, 1, 2, 3].map((idx) => (
+                <motion.div key={idx} {...staggerItem(idx * 0.1)}>
+                  {idx === 0 && (
+                    <Card className="glass-panel p-6 space-y-4">
+                      <div className="flex items-start gap-3">
+                        <div className="h-10 w-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                          <Mail className="h-5 w-5 text-primary" />
+                        </div>
+                        <div>
+                          <h3 className="font-bold font-mono mb-1">Email</h3>
+                          <p className="text-sm text-muted-foreground">
+                            hello@opensource.dev
+                          </p>
+                          <p className="text-xs text-muted-foreground mt-1">
+                            (Checked daily-ish)
+                          </p>
+                        </div>
+                      </div>
+                    </Card>
+                  )}
 
-              <Card className="glass-panel p-6 space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="h-10 w-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                    <MessageSquare className="h-5 w-5 text-secondary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold font-mono mb-1">Discord</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Join our server
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      We're probably in #off-topic
-                    </p>
-                  </div>
-                </div>
-              </Card>
+                  {idx === 1 && (
+                    <Card className="glass-panel p-6 space-y-4">
+                      <div className="flex items-start gap-3">
+                        <div className="h-10 w-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                          <MessageSquare className="h-5 w-5 text-secondary" />
+                        </div>
+                        <div>
+                          <h3 className="font-bold font-mono mb-1">Discord</h3>
+                          <p className="text-sm text-muted-foreground">
+                            Join our server
+                          </p>
+                          <p className="text-xs text-muted-foreground mt-1">
+                            We're probably in #off-topic
+                          </p>
+                        </div>
+                      </div>
+                    </Card>
+                  )}
 
-              <Card className="glass-panel p-6 space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="h-10 w-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-5 w-5 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold font-mono mb-1">Location</h3>
-                    <p className="text-sm text-muted-foreground">
-                      The Internet
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      (We work remotely, obviously)
-                    </p>
-                  </div>
-                </div>
-              </Card>
+                  {idx === 2 && (
+                    <Card className="glass-panel p-6 space-y-4">
+                      <div className="flex items-start gap-3">
+                        <div className="h-10 w-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                          <MapPin className="h-5 w-5 text-accent" />
+                        </div>
+                        <div>
+                          <h3 className="font-bold font-mono mb-1">Location</h3>
+                          <p className="text-sm text-muted-foreground">
+                            The Internet
+                          </p>
+                          <p className="text-xs text-muted-foreground mt-1">
+                            (We work remotely, obviously)
+                          </p>
+                        </div>
+                      </div>
+                    </Card>
+                  )}
 
-              <Card className="glass-panel p-6 space-y-2">
-                <h3 className="font-bold font-mono text-accent">Quick Tips:</h3>
-                <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>• Bug reports go to GitHub Issues</li>
-                  <li>• PRs are always welcome</li>
-                  <li>• For urgent issues: it's open source, fix it yourself 😉</li>
-                  <li>• Hate mail goes to /dev/null</li>
-                </ul>
-              </Card>
+                  {idx === 3 && (
+                    <Card className="glass-panel p-6 space-y-2">
+                      <h3 className="font-bold font-mono text-accent">
+                        Quick Tips:
+                      </h3>
+                      <ul className="text-sm text-muted-foreground space-y-2">
+                        <li>• Bug reports go to GitHub Issues</li>
+                        <li>• PRs are always welcome</li>
+                        <li>• For urgent issues: it's open source, fix it yourself 😉</li>
+                        <li>• Hate mail goes to /dev/null</li>
+                      </ul>
+                    </Card>
+                  )}
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
