@@ -3,7 +3,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { Code2, Heart, Sparkles, Terminal, Users, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import banner from "@/assets/banner.png";
+import banner from "@/assets/banner.jpg";
 
 const Landing = () => {
   return (
@@ -32,8 +32,9 @@ const Landing = () => {
             </div>
 
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              We build tools that don't lock you in, trap your data, or require selling your soul. 
-              <span className="text-accent font-semibold"> Just good software, made by humans who actually care.</span>
+              We make software that's open, adaptable, and community-driven, built by people who enjoy making things that others can actually use. 
+              <br></br>
+              <span className="text-accent font-semibold">Simple, honest, human-made.</span>
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center pt-4">

@@ -14,7 +14,7 @@ const About = () => {
               About Us
             </h1>
             <p className="text-xl text-muted-foreground">
-              We're just a bunch of developers who think software should be free, transparent, and not owned by billionaires.
+              We're an open-source group of developers who spend our free time building software we hope makes someone's day easier (preferably yours).
             </p>
           </div>
 
@@ -24,13 +24,10 @@ const About = () => {
               Our Mission
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              To build software that respects users' freedom, privacy, and intelligence. 
-              We believe code should be open, communities should be inclusive, and tech companies 
-              shouldn't know more about you than your therapist.
+              To build open-source software shaped by the community, for the community. We believe great ideas grow best in the open, where anyone can contribute, collaborate, and occasionally argue over naming things.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Also, we're trying to prove that you can build great software without selling your soul, 
-              your data, or your firstborn to venture capitalists. So far, so good.
+              Our goal is simple: build tools people genuinely like using.
             </p>
           </Card>
 
@@ -53,8 +50,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-bold font-mono">Community First</h3>
               <p className="text-muted-foreground">
-                We're built by the community, for the community. No board meetings, 
-                no quarterly earnings calls. Just developers helping developers.
+                We're built by the community, for the community. No bosses, no deadlines, just a bunch of people turning ideas (and coffee) into code.
               </p>
             </Card>
 
@@ -64,8 +60,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-bold font-mono">Move Fast, Fix Things</h3>
               <p className="text-muted-foreground">
-                We iterate quickly, but we also debug thoroughly. Breaking production is not a feature, 
-                despite what Silicon Valley might tell you.
+                We iterate quickly, but we also debug thoroughly. After all, unexpected plot twists are great in movies, not in production logs.
               </p>
             </Card>
 
@@ -86,7 +81,7 @@ const About = () => {
             <h2 className="text-2xl font-bold font-mono mb-6 text-accent glow-yellow">
               Some Numbers (That We Probably Made Up)
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-6">
               <div className="text-center">
                 <div className="text-4xl font-bold text-primary font-mono">42k+</div>
                 <div className="text-sm text-muted-foreground mt-2">Lines of Code</div>
@@ -95,14 +90,14 @@ const About = () => {
                 <div className="text-4xl font-bold text-secondary font-mono">∞</div>
                 <div className="text-sm text-muted-foreground mt-2">Cups of Coffee</div>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-accent font-mono">137</div>
+              {/* <div className="text-center">
+                <div className="text-4xl font-bold text-accent font-mono">2</div>
                 <div className="text-sm text-muted-foreground mt-2">GitHub Stars</div>
-              </div>
-              <div className="text-center">
+              </div> */}
+              {/* <div className="text-center">
                 <div className="text-4xl font-bold text-primary font-mono">0</div>
-                <div className="text-sm text-muted-foreground mt-2">VC Funding</div>
-              </div>
+                <div className="text-sm text-muted-foreground mt-2">Idle</div>
+              </div> */}
             </div>
           </Card>
 
