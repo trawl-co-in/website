@@ -50,7 +50,7 @@ const Contact = () => {
             animate="animate"
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl font-bold font-mono glow-magenta">
+            <h1 className="text-5xl font-bold font-mono glow-purple">
               Get in Touch
             </h1>
             <p className="text-xl text-muted-foreground">
@@ -120,7 +120,7 @@ const Contact = () => {
                     <Label htmlFor="message">Message</Label>
                     <Textarea
                       id="message"
-                      placeholder="Tell us everything. We have time. (We don't, but pretend we do)"
+                      placeholder="Tell us everything. We have time."
                       rows={8}
                       value={formData.message}
                       onChange={(e) =>
@@ -154,7 +154,7 @@ const Contact = () => {
                         <div>
                           <h3 className="font-bold font-mono mb-1">Email</h3>
                           <p className="text-sm text-muted-foreground">
-                            hello@opensource.dev
+                            contact@trawl.co.in
                           </p>
                           <p className="text-xs text-muted-foreground mt-1">
                             (Checked daily-ish)
@@ -164,7 +164,7 @@ const Contact = () => {
                     </Card>
                   )}
 
-                  {idx === 1 && (
+                  {/* {idx === 1 && (
                     <Card className="glass-panel p-6 space-y-4">
                       <div className="flex items-start gap-3">
                         <div className="h-10 w-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
@@ -181,7 +181,7 @@ const Contact = () => {
                         </div>
                       </div>
                     </Card>
-                  )}
+                  )} */}
 
                   {idx === 2 && (
                     <Card className="glass-panel p-6 space-y-4">

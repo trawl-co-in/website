@@ -11,6 +11,8 @@ import {
   staggerItem,
 } from "@/animations/commonAnimations";
 import { Footer } from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -18,7 +20,7 @@ const About = () => {
       <Sidebar />
       <main className="flex-1 overflow-auto pl-16">
         <div className="max-w-5xl mx-auto px-4 py-12">
-          
+
           {/* Header */}
           <motion.div
             className="mb-12 space-y-4"
@@ -158,25 +160,29 @@ const About = () => {
                 docs, or just really good bug reports.
               </p>
 
-              <div className="flex flex-wrap gap-4 justify-center">
-                <a
-                  href="https://github.com"
-                  className="px-6 py-3 rounded-lg bg-primary/20 border border-primary/30 text-primary hover:bg-primary/30 transition-colors font-mono"
-                >
-                  Check our GitHub
-                </a>
-                <a
-                  href="https://discord.com"
-                  className="px-6 py-3 rounded-lg bg-secondary/20 border border-secondary/30 text-secondary hover:bg-secondary/30 transition-colors font-mono"
-                >
-                  Join Discord
-                </a>
+              <div className="flex flex-wrap gap-4 justify-center pt-4">
+                <Button asChild size="lg">
+                  <a
+                    href="https://github.com/trawl-co-in"
+                    className="bg-primary/20 border border-primary/30 hover:bg-primary/30"
+                  >
+                    Check our GitHub
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <a
+                    href="https://linkedin.com/company/trawl-co-in/"
+                    className="font-mono"
+                  >
+                    Join LinkedIn
+                  </a>
+                </Button>
               </div>
             </Card>
           </motion.div>
 
         </div>
-        <Footer/>
+        <Footer />
       </main>
     </div>
   );

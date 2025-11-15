@@ -19,7 +19,8 @@ export const ArticlePage01 = () => {
                             <div className="flex items-center gap-1"><Clock className="h-4 w-4" /><span>3 min read</span></div>
                         </div>
                         <div className="flex flex-wrap gap-2 mt-4">
-                            <Badge key="satire" variant="outline" className="border-primary/30 text-primary">satire</Badge>
+                            <Badge key="docs" variant="outline" className="border-primary/30 text-primary">docs</Badge>
+                       <Badge key="satire" variant="outline" className="border-primary/30 text-primary">satire</Badge>
                         </div>
                     </div>
 

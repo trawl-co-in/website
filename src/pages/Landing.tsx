@@ -17,13 +17,11 @@ const HERO_DESCRIPTION_EMPH = "Simple, honest, human-made.";
 const FEATURE_TITLES = ["Transparency", "Community", "Innovation"];
 
 const FEATURE_TEXT = [
-  "Every line of code is visible. No hidden trackers, no mysterious 'features', no venture capitalist surveillance fantasies.",
-  "Built by developers who use it, not by product managers who... well, we're still figuring out what they do.",
-  "We move fast and fix things. Unlike some companies that move fast and break democracies.",
+  "Everything's right out in the open—no smoke, no mirrors, just code trying its best to look presentable.",
+  "Made by developers who try things, break things, share a laugh, and fix it before anyone notices.",
+  "We test new ideas, celebrate the wins, and politely pretend the strange experiments never happened.",
 ];
 
-const CTA_TITLE = "Open Source Shift";
-const CTA_SUBTEXT = "Or at least star our repos. We're not picky.";
 
 const FOOTER_NAV = {
   Navigate: ["Home", "Projects", "Blog", "About"],
@@ -89,7 +87,7 @@ const Landing = () => {
                 src={banner}
                 alt="OpenSource Hub"
                 className="w-full h-auto rounded-lg shadow-2xl glow-purple"
-                animate={{ y: [0, -12, 0] }} 
+                animate={{ y: [0, -12, 0] }}
                 transition={{
                   duration: 6,
                   repeat: Infinity,
@@ -204,13 +202,12 @@ const Landing = () => {
             >
               <Card className="glass-panel p-12 text-center space-y-6">
                 <h2 className="text-4xl font-bold font-mono">
-                  Join the {" "}
-                  <span className="text-secondary space-x-1">{CTA_TITLE}</span>
+                  Discover Our Latest {" "}<span className="text-secondary space-x-1">Experiments</span>
                 </h2>
-                <p className="text-xl text-muted-foreground">{CTA_SUBTEXT}</p>
+                <p className="text-l text-muted-foreground">Read the blog for the fun parts and contact us for the confusing bits.</p>
                 <div className="flex flex-wrap gap-4 justify-center pt-4">
                   <Button asChild size="lg">
-                    <Link to="/blog">Read Our Blog</Link>
+                    <Link to="/blog" className="bg-primary/20 border border-primary/30 hover:bg-primary/30">Read Our Blog</Link>
                   </Button>
                   <Button asChild size="lg" variant="outline">
                     <Link to="/contact">Get in Touch</Link>
@@ -220,7 +217,7 @@ const Landing = () => {
             </motion.div>
           </div>
         </section>
-        <Footer/>
+        <Footer />
       </main>
     </div>
   );

@@ -6,10 +6,10 @@ export const Sidebar = () => {
   return (
     <aside className="fixed top-0 left-0 h-screen w-16 glass-panel flex flex-col items-center py-6 gap-6 border-r border-border z-[999]">
       {/* Logo */}
-      <NavLink to="/" className="flex items-center justify-center" title="Home">
+      <NavLink to="/about" className="flex items-center justify-center" title="About">
         <img
           src={logo}
-          alt="OpenSource Hub Logo"
+          alt="trawl Logo"
           className="w-10 h-10 rounded-lg hover:scale-110 transition-transform"
         />
       </NavLink>
@@ -66,7 +66,7 @@ export const Sidebar = () => {
       {/* Bottom Help Link */}
       <div className="flex flex-col gap-4">
         <a
-          href="https://github.com"
+          href="https://github.com/trawl-co-in"
           target="_blank"
           rel="noopener noreferrer"
           className="w-10 h-10 rounded-lg hover:bg-primary/10 flex items-center justify-center transition-colors group"

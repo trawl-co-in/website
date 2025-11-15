@@ -19,9 +19,9 @@ export const Footer = () => {
                         <h3 className="font-bold font-mono text-secondary mb-4">Connect</h3>
                         <ul className="space-y-2 text-sm text-muted-foreground">
                             <li><Link to="/contact" className="hover:text-secondary transition-colors">Contact</Link></li>
-                            <li><a href="https://github.com" className="hover:text-secondary transition-colors">GitHub</a></li>
-                            <li><a href="https://discord.com" className="hover:text-secondary transition-colors">Discord</a></li>
-                            <li><a href="https://twitter.com" className="hover:text-secondary transition-colors">Twitter</a></li>
+                            <li><a href="https://github.com/trawl-co-in" className="hover:text-secondary transition-colors">GitHub</a></li>
+                            <li><a href="https://linkedin.com/company/trawl-co-in/" className="hover:text-secondary transition-colors">LinkedIn</a></li>
+                            {/* <li><a href="https://twitter.com" className="hover:text-secondary transition-colors">Twitter</a></li> */}
                         </ul>
                     </div>
                     <div>
