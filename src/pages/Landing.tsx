@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import banner from "@/assets/banner.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Footer } from "@/components/Footer";
 
 // Text constants
 const HERO_TAGLINE = "Because proprietary software is so last decade";
@@ -219,6 +220,7 @@ const Landing = () => {
             </motion.div>
           </div>
         </section>
+        <Footer/>
       </main>
     </div>
   );

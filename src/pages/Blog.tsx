@@ -95,7 +95,7 @@ const Blog = () => {
               The Blog
             </h1>
             <p className="text-xl text-muted-foreground">
-              Thoughts, tutorials, and occasionally coherent rants about open source development
+              Thoughts, tutorials, and insights shaping today’s software development.
             </p>
             <p className="text-sm text-accent font-mono">
               Warning: May contain traces of sarcasm and strong opinions about tabs vs spaces
