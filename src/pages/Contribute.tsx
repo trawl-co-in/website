@@ -14,6 +14,7 @@ import {
   scaleIn,
   staggerItem,
 } from "@/animations/commonAnimations";
+import { Footer } from "@/components/Footer";
 
 const Contribute = () => {
   const { toast } = useToast();
@@ -282,6 +283,7 @@ const Contribute = () => {
           </motion.div>
 
         </div>
+        <Footer/>
       </main>
     </div>
   );

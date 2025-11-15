@@ -10,6 +10,7 @@ import {
   scaleIn,
   staggerItem,
 } from "@/animations/commonAnimations";
+import { Footer } from "@/components/Footer";
 
 const About = () => {
   return (
@@ -175,6 +176,7 @@ const About = () => {
           </motion.div>
 
         </div>
+        <Footer/>
       </main>
     </div>
   );

@@ -15,6 +15,7 @@ import {
   scaleIn,
   staggerItem,
 } from "@/animations/commonAnimations";
+import { Footer } from "@/components/Footer";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -219,6 +220,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
+        <Footer/>
       </main>
     </div>
   );
