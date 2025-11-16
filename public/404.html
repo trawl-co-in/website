@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      // Redirect to index.html and preserve the original path
+      const redirectPath = window.location.pathname;
+      // Root deployment (custom domain) → no repo name needed
+      window.location.replace("/#" + redirectPath);
+    </script>
+  </head>
+  <body></body>
+</html>
