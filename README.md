@@ -1,49 +1,60 @@
-# Welcome to trawl website
+# Contributing to This Repository
 
-## Contribute
+## How to Contribute
 
-**Use your preferred IDE**
+### Work Locally Using Your Preferred IDE
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+To contribute locally, fork this repository and open it in your preferred IDE. When you're ready, submit a pull request (PR). Once your PR is merged, your changes will appear on the website.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Before you begin, make sure you have Node.js and npm installed — we recommend using [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 Follow these steps:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Step 1: Clone your fork of the repository.
+git clone <YOUR_FORKED_REPO_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Navigate into the project directory.
+cd trawl-website   # or your fork's directory name
 
-# Step 3: Install the necessary dependencies.
+# Step 3: Install required dependencies.
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the local development server with auto-reload.
 npm run dev
-```
+````
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Edit Files Directly on GitHub
 
-**Use GitHub Codespaces**
+If you prefer not to clone the project:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Navigate to the file you want to modify.
+2. Click the **Edit** (pencil) icon in the top-right corner.
+3. Make your changes and commit them (creating a new branch if needed).
+4. Open a pull request when prompted.
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+### Use GitHub Codespaces
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+You can also contribute entirely in the cloud:
+
+1. Go to the main page of this repository.
+2. Click the green **Code** button.
+3. Open the **Codespaces** tab.
+4. Click **New Codespace** to launch an instant development environment.
+5. Make changes directly in the Codespace, then commit and push when finished.
+
+---
+
+## Tech Stack
+
+This repository uses:
+
+* **Vite**
+* **TypeScript**
+* **React**
+* **shadcn-ui**
+* **Tailwind CSS**
