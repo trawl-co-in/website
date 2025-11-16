@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Deep cosmic background */
+    --background: 270 30% 8%;
+    --foreground: 280 15% 92%;
+
+    /* Glass card surfaces */
+    --card: 270 25% 12%;
+    --card-foreground: 280 15% 92%;
+
+    --popover: 270 25% 12%;
+    --popover-foreground: 280 15% 92%;
+
+    /* Deep purple primary */
+    --primary: 270 80% 55%;
+    --primary-foreground: 280 15% 98%;
+
+    /* Magenta secondary */
+    --secondary: 320 85% 60%;
+    --secondary-foreground: 280 15% 98%;
+
+    /* Muted purples */
+    --muted: 270 20% 16%;
+    --muted-foreground: 270 10% 65%;
+
+    /* Electric yellow highlight */
+    --accent: 50 100% 65%;
+    --accent-foreground: 270 30% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 280 15% 92%;
+
+    /* Purple-tinted borders */
+    --border: 270 40% 30%;
+    --input: 270 20% 16%;
+    --ring: 270 80% 55%;
+
+    --radius: 0.5rem;
+
+    /* Terminal-specific colors */
+    --terminal-prompt: 270 80% 55%;
+    --terminal-command: 320 85% 60%;
+    --terminal-output: 280 15% 92%;
+    --terminal-error: 0 84.2% 60.2%;
+    --terminal-success: 50 100% 65%;
+    
+    /* Glass effect variables */
+    --glass-bg: 270 25% 12% / 0.6;
+    --glass-border: 270 40% 40% / 0.3;
+    --glow-primary: 270 80% 55% / 0.2;
+    --glow-secondary: 320 85% 60% / 0.2;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'JetBrains Mono', monospace;
+    background-image: 
+      radial-gradient(ellipse at top, hsl(270 80% 55% / 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom, hsl(320 85% 60% / 0.08) 0%, transparent 50%);
+  }
+
+  /* Terminal scanline effect */
+  .terminal-scanlines::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      hsl(270 80% 55% / 0.02) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Terminal vignette */
+  .terminal-vignette::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 50%,
+      hsl(210 18% 6% / 0.3) 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* Glass morphism effect */
+  .glass-panel {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: 
+      0 0 20px hsl(var(--glow-secondary)),
+      inset 0 0 20px hsl(var(--glow-primary));
+  }
+
+  /* Command input cursor */
+  .cursor-blink {
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  /* Result card animations */
+  .result-card-enter {
+    animation: resultCardEnter 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  @keyframes resultCardEnter {
+    0% {
+      opacity: 0;
+      transform: translateY(10px) scale(0.98);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Glow effects */
+  .glow-purple {
+    text-shadow: 0 0 10px hsl(270 80% 55% / 0.5);
+  }
+
+  .glow-magenta {
+    text-shadow: 0 0 10px hsl(320 85% 60% / 0.5);
+  }
+
+  .glow-yellow {
+    text-shadow: 0 0 10px hsl(50 100% 65% / 0.5);
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(210 15% 8%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(190 50% 25%);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(270 80% 55% / 0.5);
+  }
+}
