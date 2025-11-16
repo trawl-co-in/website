@@ -40,7 +40,7 @@ const Contact = () => {
                   </div>
                   <div className="text-left">
                     <h3 className="font-bold font-mono mb-1">Email</h3>
-                    <a href="mailto:hello@trawl.co.in" className="text-sm text-muted-foreground underline">
+                    <a href="mailto:trawl%20team%20<hello@trawl.co.in>" className="text-sm text-muted-foreground underline">
                       hello@trawl.co.in
                     </a>
                     <p className="text-xs text-muted-foreground mt-1">(Checked daily-ish)</p>
