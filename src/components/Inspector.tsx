@@ -1,6 +1,10 @@
-import { Project } from "@/data/sampleProjects";
+import { Project } from "@/data/projects-data";
 import { Star, GitFork, Copy, ExternalLink, Users, Clock } from "lucide-react";
 import { toast } from "sonner";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import rehypeRaw from "rehype-raw";
 
 interface InspectorProps {
   project: Project | null;
@@ -89,9 +93,15 @@ export const Inspector = ({ project }: InspectorProps) => {
             <ExternalLink className="w-4 h-4" />
             README
           </h3>
-          <div className="glass-panel p-4 rounded-lg text-sm text-muted-foreground whitespace-pre-wrap border border-border/30 max-h-[500px] overflow-y-auto">
-            {project.readme}
-          </div>
+          <div className="glass-panel p-6 rounded-xl border border-border/30">
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeRaw, rehypeHighlight]}
+    >
+      {project.readme}
+    </ReactMarkdown>
+</div>
+
         </div>
       </div>
     </aside>

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronRight } from "lucide-react";
-import { Project } from "@/data/sampleProjects";
+import { Project } from "@/data/projects-data";
 import TerminalHistory from "./TerminalHistory";
 
 interface TerminalProps {

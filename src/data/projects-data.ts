@@ -18,19 +18,22 @@ export const sampleProjects: Project[] = [
     language: "Python",
     stars: 12847,
     license: "MIT",
-    readme: `# Denoiser App
+    readme: `# **Denoiser App**
 
-A lightweight real-time voice denoising engine designed to clean microphone input using advanced AI noise reduction. Built for developers who want simple, high-quality voice cleanup without unnecessary extras.
-
-🚧 **Currently in active development — major features coming soon!**
-
+<br/>A lightweight, real-time voice denoising engine designed to clean microphone input using advanced AI noise reduction.  
+Built for developers who want simple, high-quality voice cleanup without unnecessary extras.<br/>
+<br/>
+> 🚧 **Currently in active development — major features coming soon!**
+<br/>
 ## Features (Current & Planned)
-- 🔇 Real-time background noise removal
-- 🎤 Works with any microphone input
+- 🔇 Real-time background noise removal  
+- 🎤 Compatible with any microphone input  
 - ⚡ Low-latency audio processing
 
+<br/>
 ## License
 MIT
+
 ` , contributors: 23,
     lastCommit: "1 day ago",
   },

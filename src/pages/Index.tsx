@@ -4,7 +4,7 @@ import { Terminal } from "@/components/Terminal";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Inspector } from "@/components/Inspector";
 import { HelpModal } from "@/components/HelpModal";
-import { sampleProjects, Project } from "@/data/sampleProjects";
+import { sampleProjects, Project } from "@/data/projects-data";
 import { toast } from "sonner";
 import { HelpCircle } from "lucide-react";
 

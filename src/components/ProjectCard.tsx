@@ -1,5 +1,5 @@
 import { Star, GitFork, FileText } from "lucide-react";
-import { Project } from "@/data/sampleProjects";
+import { Project } from "@/data/projects-data";
 
 interface ProjectCardProps {
   project: Project;
