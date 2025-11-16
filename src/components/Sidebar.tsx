@@ -17,7 +17,7 @@ export const Sidebar = () => {
         py-4 sm:py-6 
         gap-6 
         border-b sm:border-b-0 sm:border-r border-border
-        z-[999]
+        z-[1]
       "
     >
       {/* Logo */}
