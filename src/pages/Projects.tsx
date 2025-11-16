@@ -106,7 +106,7 @@ const Projects = () => {
     <div className="flex h-screen w-full bg-background overflow-hidden">
       <Sidebar />
 
-      <div className="flex-1 flex flex-col min-w-0 pl-16">
+      <div className="flex-1 flex flex-col min-w-0 pt-16 sm:pt-0 sm:pl-16">
         <header className="glass-panel border-b border-border px-6 py-3 flex items-center justify-between">
           <div>
             <h1 className="text-lg font-bold text-foreground glow-purple">Our Projects</h1>
@@ -120,16 +120,10 @@ const Projects = () => {
           </button> */}
         </header>
 
-        <div className="flex-1 flex overflow-hidden">
-          <div className="flex-1 flex flex-col min-w-0">
-            {/* <Terminal onCommand={handleCommand} results={results} /> */}
-
-            <div className="border-t border-border bg-card/30 p-6 overflow-y-auto">{/*max-h-96 min-h-96*/}
-              {/* <h2 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
-                <span className="text-primary">→</span>
-                Results ({results.length})
-              </h2> */}
-
+        <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] h-full overflow-hidden">
+          {/* Left Side (Projects List) */}
+          <div className="flex flex-col min-w-0 overflow-hidden">
+            <div className="border-t border-border bg-card/30 p-6 overflow-y-auto">
               {results.length === 0 ? (
                 <p className="text-sm text-muted-foreground italic">
                   No results found.
@@ -146,11 +140,15 @@ const Projects = () => {
                 </div>
               )}
             </div>
-
           </div>
 
-          <Inspector project={selectedProject} />
+          {/* Right Side (Inspector) */}
+          <div className="overflow-y-auto">
+            <Inspector project={selectedProject} />
+          </div>
+
         </div>
+
       </div>
 
       <HelpModal open={showHelp} onOpenChange={setShowHelp} />

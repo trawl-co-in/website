@@ -8,7 +8,11 @@ export const ArticlePage01 = () => {
     return (
         <div className="min-h-screen flex w-full">
             <Sidebar />
-            <main className="flex-1 overflow-auto pl-16">
+           <main className="flex-1 overflow-auto pt-16 sm:pt-0 sm:pl-16">
+
+
+
+
 
                 <div className="max-w-4xl mx-auto px-4 py-12">
                     <h1 className="text-5xl font-bold font-mono glow-purple">Documentation: we never wrote</h1>

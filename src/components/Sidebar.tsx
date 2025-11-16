@@ -5,9 +5,27 @@ import { GithubIcon } from "./icons/GithubIcon";
 
 export const Sidebar = () => {
   return (
-    <aside className="fixed top-0 left-0 h-screen w-16 glass-panel flex flex-col items-center py-6 gap-6 border-r border-border z-[999]">
+    <aside
+      className="
+        fixed top-0 left-0 
+        w-full h-16
+        sm:w-16 sm:h-screen
+        glass-panel flex flex-row sm:flex-col 
+        items-center sm:items-center 
+        justify-between sm:justify-start
+        px-4 sm:px-0 
+        py-4 sm:py-6 
+        gap-6 
+        border-b sm:border-b-0 sm:border-r border-border
+        z-[999]
+      "
+    >
       {/* Logo */}
-      <NavLink to="/about" className="flex items-center justify-center" title="About">
+      <NavLink
+        to="/about"
+        className="flex items-center justify-center"
+        title="About"
+      >
         <img
           src={logo}
           alt="trawl Logo"
@@ -16,7 +34,14 @@ export const Sidebar = () => {
       </NavLink>
 
       {/* Navigation */}
-      <nav className="flex flex-col gap-3 flex-1">
+      <nav
+        className="
+          flex flex-row sm:flex-col 
+          gap-3 
+          flex-1 
+          justify-center sm:justify-start
+        "
+      >
         <NavLink
           to="/"
           end
@@ -65,7 +90,7 @@ export const Sidebar = () => {
       </nav>
 
       {/* Bottom Help Link */}
-      <div className="flex flex-col gap-4">
+      <div className="hidden sm:flex flex-col gap-4">
         <a
           href="https://github.com/trawl-co-in"
           target="_blank"

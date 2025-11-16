@@ -38,7 +38,11 @@ const Contribute = () => {
   return (
     <div className="min-h-screen flex w-full">
       <Sidebar />
-      <main className="flex-1 overflow-auto pl-16">
+     <main className="flex-1 overflow-auto pt-16 sm:pt-0 sm:pl-16">
+
+
+
+
         <div className="max-w-5xl mx-auto px-4 py-12">
 
           {/* Header */}

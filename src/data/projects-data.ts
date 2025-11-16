@@ -20,8 +20,8 @@ export const sampleProjects: Project[] = [
     license: "MIT",
     readme: `# **Denoiser App**
 
-<br/>A lightweight, real-time voice denoising engine designed to clean microphone input using advanced AI noise reduction.  
-Built for developers who want simple, high-quality voice cleanup without unnecessary extras.<br/>
+<br/>A lightweight, real-time voice denoising engine designed to clean microphone input using advanced AI noise reduction.
+<br/>
 <br/>
 > 🚧 **Currently in active development — major features coming soon!**
 <br/>
@@ -31,6 +31,7 @@ Built for developers who want simple, high-quality voice cleanup without unneces
 - ⚡ Low-latency audio processing
 
 <br/>
+
 ## License
 MIT
 
